@@ -1,0 +1,25 @@
+@import "helper";
+
+$tabnav-background-color: #1c1c1e;
+$tabnav-active-background-color: #3c3c3e;
+
+.tabnav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: px2rem($tabnav-height);
+  background-color: $tabnav-background-color;
+}
+.tabnav-item {
+  float: left;
+  text-align: center;
+  width: (100 / 3) * 1%;
+  color: #fff;
+  line-height: px2rem($tabnav-height);
+  border-left: 1px solid #4c5157;
+  margin-left: -1px;
+
+  &.active {
+    background-color: $tabnav-active-background-color;
+  }
+}

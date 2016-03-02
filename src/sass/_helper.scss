@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+$rem-base: 75px !default;
+$site-font-color: #353535;
+$site-highlight-color: #ff572e;
+$tabnav-height: 137px;
+
+@function px2rem ($px) {
+  // 没有单位的当作 px 处理
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return px2rem($px + 0px);
+  }
+  // 如果单位是 em，则保留
+  @else if (unit($px) == em) {
+    @return $px;
+  }
+
+  @return $px / $rem-base * 1rem;
+}
